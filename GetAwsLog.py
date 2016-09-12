@@ -54,7 +54,7 @@ def main(argv):
     if options.debug: print '+++ Connecting to Amazon S3'
     s3 = boto.connect_s3()
     c = s3.get_bucket(options.logBucket)
-    dst = s3.get_bucket('ids-dealvector1')
+    dst = s3.get_bucket('ids')
     x=c.list()
     for i in x: dst.copy_key(i.key,c.name,i.key)
 
