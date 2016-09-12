@@ -21,9 +21,9 @@ agent
 
 
 !
-curl -u foo:bar -k -X PUT https://10.0.4.142:55000/manager/restart
+curl -u foo:bar -k -X PUT https://<master-ip>:55000/manager/restart
 sleep 20
-sudo /var/ossec/bin/agent-auth -m 10.0.4.142 -p 1515
+sudo /var/ossec/bin/agent-auth -m <master-ip> -p 1515
 sleep 20
 sudo /var/ossec/bin/ossec-control start
 sleep 20
